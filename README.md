@@ -8,12 +8,12 @@ sam local start-api
 
 ## npm
 
-cd sam-app/hello-world
 npm init
 npm install --save dateformat
+npm install --save mysql2
+npm install --save cardinal
 
 ## webpack
 
-cd sam-app/hello-world
 npm install -D webpack webpack-cli
 npm run build

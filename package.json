@@ -1,0 +1,29 @@
+{
+  "name": "aws-lambda",
+  "version": "1.0.0",
+  "description": "## sam",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanagin/aws-lambda.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yanagin/aws-lambda/issues"
+  },
+  "homepage": "https://github.com/yanagin/aws-lambda#readme",
+  "dependencies": {
+    "cardinal": "^2.1.1",
+    "dateformat": "^5.0.2",
+    "mysql2": "^2.3.3-rc.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.62.1",
+    "webpack-cli": "^4.9.1"
+  }
+}
