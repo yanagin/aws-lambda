@@ -9,9 +9,6 @@ on:
 jobs:
    deploy:
         runs-on: ubuntu-latest
-        defaults:
-          run:
-            working-directory: ./sam-app/hello-world
         permissions:
             id-token: write
             contents: read
@@ -32,6 +29,8 @@ jobs:
               with:
                 python-version: 3.9
             - run: npm install
+              working-directory: ./sam-app/hello-world
             - run: zip -r package.zip ./*
+              working-directory: ./sam-app/hello-world
             - run: pip3 install awscli
-            - run: aws lambda update-function-code --function-name hello-world-nodejs --zip-file fileb://package.zip --publish
+            - run: aws lambda update-function-code --function-name hello-world-nodejs --zip-file fileb://sam-app/hello-worldpackage.zip --publish
