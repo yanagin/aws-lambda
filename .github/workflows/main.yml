@@ -29,9 +29,13 @@ jobs:
               with:
                 python-version: 3.9
             - run: npm install
+              working-directory: ./sam-app/hello-world              
+            - run: npm install -D webpack webpack-cli
+              working-directory: ./sam-app/hello-world
+            - run: npm run build
               working-directory: ./sam-app/hello-world
             - run: zip -r package.zip ./*
-              working-directory: ./sam-app/hello-world
+              working-directory: ./sam-app/hello-world/dist
             - run: pip3 install awscli
             - run: aws lambda update-function-code --function-name hello-world-nodejs --zip-file fileb://package.zip --publish
-              working-directory: ./sam-app/hello-world
+              working-directory: ./sam-app/hello-world/dist
