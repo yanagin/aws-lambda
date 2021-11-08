@@ -14,13 +14,17 @@ let response;
  * @returns {Object} object - API Gateway Lambda Proxy Output Format
  * 
  */
+
+//import dateFormat, { masks } from "dateformat";
+const mysql = require('mysql2/promise');
+
 exports.lambdaHandler = async (event, context) => {
     try {
         // const ret = await axios(url);
         response = {
             'statusCode': 200,
             'body': JSON.stringify({
-                message: 'hello world',
+                message: 'hello world with mysql2',
                 // location: ret.data.trim()
             })
         }
