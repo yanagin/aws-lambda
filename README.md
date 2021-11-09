@@ -18,3 +18,9 @@ npm install --save cardinal
 npm install -D webpack webpack-cli
 npm run build
 npm run watch
+
+## unit-test
+
+npm install -D mocha
+npm install -D chai
+npm run test
