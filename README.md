@@ -17,3 +17,4 @@ npm install --save cardinal
 
 npm install -D webpack webpack-cli
 npm run build
+npm run watch

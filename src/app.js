@@ -25,7 +25,7 @@ exports.lambdaHandler = async (event, context) => {
         response = {
             'statusCode': 200,
             'body': JSON.stringify({
-                message: 'hello world with mysql2 webpack ' + util.doSomething() + ' 2021/11/09',
+                message: 'hello world with mysql2 webpack ' + util.doSomething() + ' watch',
                 // location: ret.data.trim()
             })
         }
