@@ -28,6 +28,10 @@ jobs:
             - uses: actions/setup-python@v2
               with:
                 python-version: 3.9
-            - run: zip -rj package.zip ./sam-app/hello-world/app.js
             - run: pip3 install awscli
-            - run: aws lambda update-function-code --function-name hello-world-nodejs --zip-file fileb://package.zip --publish
+            - run: zip -rj app.zip ./sam-app/hello-world/app.js
+            - run: aws lambda update-function-code --function-name hello-world-nodejs --zip-file fileb://app.zip --publish
+            - run: zip -rj app.zip ./sam-app/hello-world/function1.js
+            - run: aws lambda update-function-code --function-name Function1 --zip-file fileb://function1.zip --publish
+            - run: zip -rj app.zip ./sam-app/hello-world/function2.js
+            - run: aws lambda update-function-code --function-name Function2 --zip-file fileb://function2.zip --publish
