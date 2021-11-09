@@ -1,5 +1,5 @@
 'use strict';
 
-exports.doSomething = () => {
-    return 'Util.js';
+export const doSomething = () => {
+    return '[ESM]doSomething@Util.js';
 }

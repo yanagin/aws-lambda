@@ -16,9 +16,9 @@ let response;
  */
 
 import dateFormat, { masks } from "dateformat";
+import {doSomething} from './Util.js';
 
 const mysql = require('mysql2/promise');
-const util = require('./Util.js');
 
 export async function lambdaHandler(event, context) {
     try {
@@ -26,7 +26,7 @@ export async function lambdaHandler(event, context) {
         response = {
             'statusCode': 200,
             'body': JSON.stringify({
-                message: 'hello world with mysql2 webpack ' + util.doSomething() + ' watch dateFormat->' + dateFormat(new Date(), 'yyyy/mm/dd HH:MM:ss'),
+                message: 'hello world with mysql2 webpack ' + doSomething() + ' watch dateFormat->' + dateFormat(new Date(), 'yyyy/mm/dd HH:MM:ss'),
                 // location: ret.data.trim()
             })
         }
