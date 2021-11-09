@@ -15,17 +15,18 @@ let response;
  * 
  */
 
-//import dateFormat, { masks } from "dateformat";
+import dateFormat, { masks } from "dateformat";
+
 const mysql = require('mysql2/promise');
 const util = require('./Util.js');
 
-exports.lambdaHandler = async (event, context) => {
+export async function lambdaHandler(event, context) {
     try {
         // const ret = await axios(url);
         response = {
             'statusCode': 200,
             'body': JSON.stringify({
-                message: 'hello world with mysql2 webpack ' + util.doSomething() + ' watch',
+                message: 'hello world with mysql2 webpack ' + util.doSomething() + ' watch dateFormat->' + dateFormat(new Date(), 'yyyy/mm/dd HH:MM:ss'),
                 // location: ret.data.trim()
             })
         }
