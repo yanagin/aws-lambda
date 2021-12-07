@@ -29,7 +29,7 @@ jobs:
               with:
                 python-version: 3.9
             - run: pip3 install awscli
-            - run: zip -rj app.zip ./sam-app/hello-world/app.js
+            - run: zip -rj function1.zip ./sam-app/hello-world/app.js
             - run: aws lambda update-function-code --function-name Function1 --zip-file fileb://function1.zip --publish
             - run: zip -rj function2.zip ./sam-app/hello-world/function2.js
             - run: aws lambda update-function-code --function-name Function2 --zip-file fileb://function2.zip --publish
